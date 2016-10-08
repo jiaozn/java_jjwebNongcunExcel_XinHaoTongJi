@@ -7,11 +7,8 @@
 			+ path + "/";
 %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-	User user = new User();
-	user.setName("西区");
-	user.setPassword("password");
-	session.setAttribute("user", user);
+
+<% User user=(User)session.getAttribute("user");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -106,6 +103,7 @@
 		<div class="form-group">
 			<h4>I.导入</h4>
 			<input type="file" name="myFile">
+			<input type="hidden" name="" value="<%=user.getName()%>">
 		</div>
 		<div class="form-group">
 			<!-- <input type="hidden" value="<s:property value="#session.userx"/>" 

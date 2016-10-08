@@ -7,11 +7,7 @@
 			+ path + "/";
 %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-	User user = new User();
-	user.setName("西区");
-	user.setPassword("password");
-	session.setAttribute("user", user);
+<% User user=(User)session.getAttribute("user");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -34,7 +30,9 @@
 
 </head>
 <body>
+
 	<jsp:include page="main_head.jsp"></jsp:include>
+	欢迎,<%=user.getName() %>.<a href="user_logout">退出</a>
 	<div class="panel-body" style="padding-bottom:0px;">
 		 <div class="panel panel-default">
 			 <div class="panel-heading">I.导入&nbsp;&nbsp;&nbsp;&nbsp;<a href="nongcun_templetDownload" >导入模板下载</a>
@@ -54,6 +52,7 @@
 						 	<div class="" style="text-align:left;">
 						 		<input type="submit" value="上传" 
 									class="btn btn-primary">
+									<input type="hidden" name="user.name" value="<%=user.getName()%>">
 								<a href="nongcun_download" class="btn btn-default">导出所有</a>
 						 	</div>
 						</div>

@@ -13,6 +13,8 @@ import org.springframework.stereotype.Repository;
 
 import com.jjweb.model.Nongcun;
 import com.jjweb.model.NongcunDAO;
+import com.jjweb.model.User;
+import com.jjweb.model.UserDAO;
 
 //import com.jjweb.model.Category;
 //import com.jjweb.model.Introduction;
@@ -27,6 +29,8 @@ import com.jjweb.model.NongcunDAO;
 public class ApplicationListenerImpl implements ApplicationListener {
 	@Resource
 	private NongcunDAO nongcunDAO;
+	@Resource
+	private UserDAO userDAO;
 	@Override
 	public void onApplicationEvent(ApplicationEvent arg0) {
 		// TODO Auto-generated method stub
@@ -40,6 +44,49 @@ public class ApplicationListenerImpl implements ApplicationListener {
 		nongcun.setTime(new Timestamp(new Date().getTime()));
 		nongcunDAO.save(nongcun);
 		}
+		
+		
+		User user=new User();
+		user.setName("admin");
+		user.setPassword("admin");
+		user.setAuth(7);
+		userDAO.save(user);
+		
+		user.setName("dongqu");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+	
+		user.setName("xiqu");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
+		user.setName("daiyue");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
+		user.setName("feicheng");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
+		user.setName("xintai");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
+		user.setName("dongping");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
+		user.setName("ningyang");
+		user.setPassword("ta123456");
+		user.setAuth(5);
+		userDAO.save(user);
+		
 //		Category category=new Category();
 //		category.setName("Ö÷Ò³ÎÄ×Ö");
 //		category.setArticals(null);
