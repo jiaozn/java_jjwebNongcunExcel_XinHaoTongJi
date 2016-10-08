@@ -19,6 +19,7 @@
 	 <!-- Struts Annotation -->
 	<constant name="actionPackages" value="com.jjweb.action" />
 	
+	<!--  <param name="enableGZIP">false</param>-->
 	
 	 <constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	    <!-- 限定上传文件最大大小4M,struts2默认maxSize为2M -->  
@@ -27,7 +28,7 @@
     <constant name="struts.multipart.saveDir" value="/tempUpload"></constant> 
     
     
-       <package name="default" namespace="/" extends="struts-default">
+       <package name="default" namespace="/" extends="struts-default,json-default">
 
      <!--    <default-action-ref name="index" /> -->
 
@@ -42,6 +43,12 @@
        <!--  <action name="index">
             <result>/WEB-INF/content/service_introduction_show.jsp</result>
         </action> -->
+        <action name="GetNongcunAll" class="com.jjweb.action.GetNongcunAll" method="execute">
+            <result type="json">
+            <param name="root">result</param>
+            </result>
+        </action>
+        
         
         <action name="movie" class="com.jjweb.action.MovieAction">  
             <!-- 配置fileUpload拦截器 -->  

@@ -22,7 +22,7 @@
 	  <!-- 配置注解实现管理事务（cglib：proxy-target-class="true"） -->
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
-<bean id="NongcunDAO" class="com.jjweb.model.NongcunDAO">
+	<bean id="NongcunDAO" class="com.jjweb.model.NongcunDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
