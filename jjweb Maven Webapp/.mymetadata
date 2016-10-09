@@ -3,7 +3,7 @@
   type="WEB"
   name="jjweb Maven Webapp"
   id="myeclipse.1474550256157"
-  context-root="/jjweb"
+  context-root="/nongcun"
   j2ee-spec="6.0"
   archive="jjweb Maven Webapp.war">
   <attributes>
