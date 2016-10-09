@@ -80,11 +80,19 @@ public class NongcunAction extends ActionSupport{
 	@Action(value="nongcun_showAll",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll.jsp")})
 	public String nongcun_showAll(){
-		listNongcun=nongcunDAO.findAll();
-		
 		return SUCCESS;
 	}
-
+	@Action(value="nongcun_showAll2",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll2.jsp")})
+	public String nongcun_showAll2(){
+		listNongcun=nongcunDAO.findAll();
+		return SUCCESS;
+	}
+	@Action(value="nongcun_introduction",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_introduction.jsp")})
+	public String nongcun_introduction(){
+		return SUCCESS;
+	}
 	@Action(value="nongcun_upload_commit",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_inputCommit.jsp")})
 	public String nongcun_upload_commit(){

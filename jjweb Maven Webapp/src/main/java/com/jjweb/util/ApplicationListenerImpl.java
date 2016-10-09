@@ -35,15 +35,15 @@ public class ApplicationListenerImpl implements ApplicationListener {
 	public void onApplicationEvent(ApplicationEvent arg0) {
 		// TODO Auto-generated method stub
 		
-		List list=nongcunDAO.findAll();
-		if(list.size()<=0){
-		Nongcun nongcun=new Nongcun();
-		nongcun.setDishi("泰安");
-		nongcun.setQuxian("岱岳区");
-		nongcun.setXiangzhen("邱家店镇");
-		nongcun.setTime(new Timestamp(new Date().getTime()));
-		nongcunDAO.save(nongcun);
-		}
+//		List list=nongcunDAO.findAll();
+//		if(list.size()<=0){
+//		Nongcun nongcun=new Nongcun();
+//		nongcun.setDishi("泰安");
+//		nongcun.setQuxian("岱岳区");
+//		nongcun.setXiangzhen("邱家店镇");
+//		nongcun.setTime(new Timestamp(new Date().getTime()));
+//		nongcunDAO.save(nongcun);
+//		}
 		
 		
 		User user=new User();

@@ -15,7 +15,6 @@
 
 </head>
 <body>
-  <jsp:include page="WEB-INF/content/main_head.jsp"></jsp:include>
 	
 	
 	
