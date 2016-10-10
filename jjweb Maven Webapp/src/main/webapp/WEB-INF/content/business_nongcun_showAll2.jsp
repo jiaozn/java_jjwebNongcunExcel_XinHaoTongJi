@@ -59,7 +59,7 @@
     }
 	initTable();
     function initTable() {
-        var queryUrl = 'http://localhost:8080/jjweb/GetNongcunAll';
+        var queryUrl = 'GetNongcunAll';
         $table = $('#nongcunTable').bootstrapTable({
             method: 'get',
             url: queryUrl,
