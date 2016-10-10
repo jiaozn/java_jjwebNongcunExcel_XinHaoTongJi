@@ -41,13 +41,13 @@ if (session.getAttribute("user")!=null){
 <body>
 
 	
-	欢迎,<%=user.getName() %>.<a href="user_logout">退出</a>
+	欢迎,<%=user.getName() %>.<a href="user_logout.Action">退出</a>
 	<div class="panel-body" style="padding-bottom:0px;">
 		 <div class="panel panel-default">
 			 <div class="panel-heading">IV.注意
 			 </div>
 				 <div class="panel-body">
-					<form action="nongcun_upload_commit" method="post"
+					<form action="nongcun_upload_commit.Action" method="post"
 					enctype="multipart/form-data">
 						<div class="form-group" style="margin-top:15px">
 						 	<ul>

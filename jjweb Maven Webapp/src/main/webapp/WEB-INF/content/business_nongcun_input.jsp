@@ -49,8 +49,8 @@ study_c .jsp
   </form>  
    --%>
    
-   <form action="nongcun_upload_commit" method="post" enctype="multipart/form-data" role="form">  
-  <a href="nongcun_templetDownload">模板下载</a>
+   <form action="nongcun_upload_commit.Action" method="post" enctype="multipart/form-data" role="form">  
+  <a href="nongcun_templetDownload.Action">模板下载</a>
 <div class="form-group">
 文件：<input type="file" name="myFile">  </div>
 <br>  

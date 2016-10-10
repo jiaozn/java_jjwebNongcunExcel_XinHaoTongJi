@@ -45,7 +45,7 @@ if (session.getAttribute("user")!=null){
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				<li><a href="nongcun_showAll">i.导入导出 </a>
+				<li><a href="nongcun_showAll.Action">i.导入导出 </a>
 					</li>
 					<!--  
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -60,16 +60,16 @@ if (session.getAttribute("user")!=null){
 							</li>
 						</ul></li>
 					-->	
-					<li><a href="nongcun_showAll2">ii.数据在线</a>
+					<li><a href="nongcun_showAll2.Action">ii.数据在线</a>
 					</li>	
-					<li><a href="nongcun_introduction">iii.说明</a>
+					<li><a href="nongcun_introduction.Action">iii.说明</a>
 					</li>
 					
 					
 					
-						<li><a href="user_logout">iv.退出</a>
+						<li><a href="user_logout.Action">iv.退出</a>
 						</li>
-						<li class="dropdown"><a href="user_logout" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						<li class="dropdown"><a href="user_logout.Action" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">欢迎,<%=user.getName()%><span class="caret"></span>
 					</a>
 					<%--	

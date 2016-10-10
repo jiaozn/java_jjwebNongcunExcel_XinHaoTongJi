@@ -23,7 +23,7 @@
 			 <div class="panel-heading">登陆
 			 </div>
 				 <div class="panel-body">
-					<form action="login" method="post">
+					<form action="login.Action" method="post">
 						<div class="form-group" style="margin-top:15px">
 						 	<div class="" style="text-align:left;">
 						 	<p>用户名：<input type="text" name="user.name"></p>

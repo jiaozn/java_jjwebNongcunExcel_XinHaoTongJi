@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta http-equiv="Refresh" content="0;url=nongcun_showAll">
+<meta http-equiv="Refresh" content="0;url=nongcun_showAll.Action">
 </head>
 <body>
   <jsp:include page="main_head.jsp"></jsp:include>

@@ -77,23 +77,23 @@ public class NongcunAction extends ActionSupport{
 		return user;
 	}
 
-	@Action(value="nongcun_showAll",results={
+	@Action(value="nongcun_showAll.Action",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll.jsp")})
 	public String nongcun_showAll(){
 		return SUCCESS;
 	}
-	@Action(value="nongcun_showAll2",results={
+	@Action(value="nongcun_showAll2.Action",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll2.jsp")})
 	public String nongcun_showAll2(){
 		listNongcun=nongcunDAO.findAll();
 		return SUCCESS;
 	}
-	@Action(value="nongcun_introduction",results={
+	@Action(value="nongcun_introduction.Action",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_introduction.jsp")})
 	public String nongcun_introduction(){
 		return SUCCESS;
 	}
-	@Action(value="nongcun_upload_commit",results={
+	@Action(value="nongcun_upload_commit.Action",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_inputCommit.jsp")})
 	public String nongcun_upload_commit(){
         try {
@@ -144,14 +144,14 @@ public class NongcunAction extends ActionSupport{
 	}
 	
 	
-	@Action(value="nongcun_upload_input",results={
+	@Action(value="nongcun_upload_input.Action",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_input.jsp")})
 	public String nongcun_upload_input(){
 		return SUCCESS;
 	}
 	
 	
-	@Action(value="nongcun_download",results={   
+	@Action(value="nongcun_download.Action",results={   
 		         @Result(params = {
 		                 // 下载的文件格式
 		                 "contentType", "application/octet-stream",   
@@ -284,7 +284,7 @@ public class NongcunAction extends ActionSupport{
 	}
 	
 	
-	@Action(value="nongcun_templetDownload",results={   
+	@Action(value="nongcun_templetDownload.Action",results={   
 	         @Result(params = {
 	                 // 下载的文件格式
 	                 "contentType", "application/octet-stream",   

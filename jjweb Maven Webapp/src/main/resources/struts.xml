@@ -43,20 +43,20 @@
        <!--  <action name="index">
             <result>/WEB-INF/content/service_introduction_show.jsp</result>
         </action> -->
-        <action name="GetNongcunAll" class="com.jjweb.action.GetNongcunAll" method="execute">
+        <action name="GetNongcunAll.Action" class="com.jjweb.action.GetNongcunAll" method="execute">
             <result type="json">
             <param name="root">result</param>
             </result>
         </action>
         
-        <action name="login" class="com.jjweb.action.UserAction" method="execute">
+        <action name="login.Action" class="com.jjweb.action.UserAction" method="execute">
             <result name="success">/WEB-INF/content/service_loginSuccess.jsp</result>
             <result name="failed">/WEB-INF/content/service_loginFailed.jsp</result>
         </action>
-         <action name="user_logout" class="com.jjweb.action.UserAction" method="user_logout">
+         <action name="user_logout.Action" class="com.jjweb.action.UserAction" method="user_logout">
             <result name="success">index.jsp</result>
         </action>
-        <action name="movie" class="com.jjweb.action.MovieAction">  
+        <action name="movie.Action" class="com.jjweb.action.MovieAction">  
             <!-- 配置fileUpload拦截器 -->  
             <interceptor-ref name="fileUpload">  
                 <!-- 配置允许上传的文件类型-->  
@@ -80,7 +80,7 @@
             <result name="play">/WEB-INF/content/entertainment_movie_play.jsp</result>
         </action>  
     
-        <action name="upload" class="com.jjweb.action.UploadAction">  
+        <action name="upload.Action" class="com.jjweb.action.UploadAction">  
             <!-- 配置fileUpload拦截器 -->  
             <interceptor-ref name="fileUpload">  
                 <!-- 配置允许上传的文件类型-->  
