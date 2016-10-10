@@ -7,7 +7,15 @@
 			+ path + "/";
 %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<% User user=(User)session.getAttribute("user");
+<%
+User user=new User();
+if (session.getAttribute("user")!=null){
+	user=(User)session.getAttribute("user");
+}else{
+	user.setId(0);
+	user.setName("游客");
+}
+
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

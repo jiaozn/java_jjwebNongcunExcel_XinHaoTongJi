@@ -27,7 +27,15 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <title>Hello,world</title>
-<% User user=(User)session.getAttribute("user");
+<%
+User user=new User();
+if (session.getAttribute("user")!=null){
+	user=(User)session.getAttribute("user");
+}else{
+	user.setId(0);
+	user.setName("游客");
+}
+
 %>
 </head>
 <body>

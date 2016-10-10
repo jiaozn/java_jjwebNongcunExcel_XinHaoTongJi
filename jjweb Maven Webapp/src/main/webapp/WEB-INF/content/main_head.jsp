@@ -25,7 +25,15 @@
 	-->
 
 </head>
-<% User user=(User)session.getAttribute("user");
+<%
+User user=new User();
+if (session.getAttribute("user")!=null){
+	user=(User)session.getAttribute("user");
+}else{
+	user.setId(0);
+	user.setName("游客");
+}
+
 %>
 <body>
 <div class="page-header">
