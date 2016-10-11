@@ -41,7 +41,7 @@ if (session.getAttribute("user")!=null){
 <body>
 	<div class="panel-body" style="padding-bottom:0px;">
 		 <div class="panel panel-default">
-			 <div class="panel-heading">I.导入&nbsp;&nbsp;&nbsp;&nbsp;<a href="nongcun_templetDownload" >导入模板下载</a>
+			 <div class="panel-heading">I.导入导出&nbsp;&nbsp;&nbsp;&nbsp;<a href="nongcun_templetDownload" class="btn btn-primary">导入模板下载</a>
 			 </div>
 				 <div class="panel-body">
 					<form action="nongcun_upload_commit" method="post"
@@ -59,7 +59,7 @@ if (session.getAttribute("user")!=null){
 						 		<input type="submit" value="上传" 
 									class="btn btn-primary">
 									<input type="hidden" name="user.name" value="<%=user.getName()%>">
-								<a href="nongcun_download" class="btn btn-default">导出所有</a>
+								<a href="nongcun_download" class="btn btn-danger">导出所有</a>
 						 	</div>
 						</div>
 					</form>

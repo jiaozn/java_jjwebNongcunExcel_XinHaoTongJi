@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	
+  	<hr>
    <p> since 2016.10.</p>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

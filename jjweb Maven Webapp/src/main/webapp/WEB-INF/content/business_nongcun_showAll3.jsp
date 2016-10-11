@@ -30,12 +30,12 @@ if (session.getAttribute("user")!=null){
 <title>Hello,world</title>
 </head>
 <body>
-
-	<form action="nongcun_search" name="form1">
-	<input id="searchText" type="text" name="key1" value="<s:property value="key1"/>" >
-	<input type="submit" value="搜索" >
+<hr>
+	<form action="nongcun_search" name="form1" class="form-search">
+	<input id="searchText" class="input-medium search-query" type="text" name="key1" value="<s:property value="key1"/>" >
+	<input type="submit" class="btn btn-primary" value="搜索" >
 	</form>
-	<table class="table">
+	<table class="table table-bordered table-striped table-hover table-condensed table-responsive">
 	
 	<tr>
 			<td>id  </td>
@@ -139,8 +139,8 @@ style="text-align: center">
 <a href="nongcun_search?pagenum=<s:property value='pageBean.totalPage' />" onclick="javascript:changeURL(this)">[尾页]</a>
 </s:if>
 <s:else><span style="color:#CCC">尾页</span></s:else>
-	<form action="nongcun_search" onsubmit="javascript:return changeAction(this)">
-	<input type="text" name="pagenum" id="form-pagenum">
+	<form action="nongcun_search" onsubmit="javascript:return changeAction(this)" class="form-inline">
+	<input type="text" name="pagenum" id="form-pagenum" placeholder="跳转到页码...">
 	<input type="hidden" name="key1" id="from-key1" value="">
 	<input class="btn btn-primary" type="submit" value="跳到">
 </form>

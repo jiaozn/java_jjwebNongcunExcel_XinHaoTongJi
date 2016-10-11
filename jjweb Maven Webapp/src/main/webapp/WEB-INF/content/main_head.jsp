@@ -36,8 +36,11 @@ if (session.getAttribute("user")!=null){
 
 %>
 <body>
+
 <div class="page-header">
-	<h2>农村信号覆盖统计</h2>
+   <h2> <strong>农村信号覆盖统计</strong>
+    </h2>
+</div>
 
 
 <div class="container"> 
@@ -56,7 +59,6 @@ if (session.getAttribute("user")!=null){
             </ul> 
         </div> 
     </div> 
-</div>
 </div>
 </body>
 </html>
