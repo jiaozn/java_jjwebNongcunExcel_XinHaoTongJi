@@ -89,7 +89,7 @@ if (session.getAttribute("user")!=null){
 <td><s:property value="#n.shiwai4g"/>
 </td>
 <td><a href="javascript:setvalue(this)" onclick="javascript:setvalue(this)" >编辑</a>&nbsp;&nbsp;
-<a href="nongcun_del?id=<s:property value="#n.id"/>" onclick="javascript:return predel()">删除</a>
+<a href="nongcun_del?nongcun.id=<s:property value="#n.id"/>" onclick="javascript:return predel()">删除</a>
 
 </td>
 </tr>
@@ -185,6 +185,7 @@ function setvalue(aaa){
 
 function predel() { 
 	var msg = "确定删除？\n\n请确认！"; 
+	//alert(this.);
 	if (confirm(msg)==true){ 
 	return true; 
 	}else{ 

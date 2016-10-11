@@ -135,6 +135,7 @@ public class NongcunAction extends ActionSupport{
 	@Action(value="nongcun_del",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_deleteCommit.jsp")})
 	public String nongcun_del(){
+		nongcun=nongcunDAO.findById(nongcun.getId());
 		nongcunDAO.delete(nongcun);
 		return SUCCESS;
 	}
