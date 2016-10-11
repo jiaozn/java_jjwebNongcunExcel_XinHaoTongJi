@@ -90,6 +90,27 @@ if (session.getAttribute("user")!=null){
 </td>
 </tr>
 </s:iterator>
+
+<tr></tr>
+<tr></tr>
+<form action="">
+		<tr>
+			<td><input type="text" name="nongcun.id" id="nongid" style="width:100%"/> </td>
+			<td><input type="text" name="nongcun.dishi" id="nongdishi" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.quxian" id="nongquxian" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.xiangzhen" id="nongxiangzhen" style="width:100%" /></td>
+			<td><input type="text" name="nongcun.xiangzhenleixing" id="nongxiangzhenleixing" style="width:100%" /></td>
+			<td><input type="text" name="nongcun.xingzhengcunming" id="nongxingzhengcunming" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shinei2g" id="nongshinei2g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shiwai2g" id="nongshiwai2g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shinei3g" id="nongshiwai3g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shiwai3g" id="nongshiwai3g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shinei4g" id="nongshinei4g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shiwai4g" id="nongshiwai4g" style="width:100%"/></td>
+			<td><input type="submit" value="更新/新增" id="nongdishi" style="width:100%"/></td>
+		</tr>
+</form>
+
 </table>
 
 <table class="table">
@@ -118,6 +139,9 @@ style="text-align: right">
 	<input type="text" name="pagenum">
 	<input class="btn btn-primary" type="submit" value="跳到">
 </form>
+
+
+
 
 </td>
 </tr>
