@@ -39,9 +39,9 @@ if (session.getAttribute("user")!=null){
 			<td>id  </td>
 			<td>地市</td>
 			<td>区县</td>
-			<td>乡镇</td>
+			<td>乡镇*</td>
 			<td>乡镇类型</td>
-			<td>行政村名称</td>
+			<td>村名*</td>
 			<td>2G室内</td>
 			<td>2G室外</td>
 			<td>3G室内</td>
@@ -94,9 +94,9 @@ if (session.getAttribute("user")!=null){
 
 <tr></tr>
 <tr></tr>
-<form action="">
+<form action="nongcun_saveorupdate">
 		<tr>
-			<td><input type="text" name="nongcun.id" id="nongid" style="width:100%" disabled="disabled"/> </td>
+			<td><input type="text" id="nongid" style="width:100%" disabled="disabled"/> </td>
 			<td><input type="text" name="nongcun.dishi" id="nongdishi" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.quxian" id="nongquxian" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.xiangzhen" id="nongxiangzhen" style="width:100%" /></td>

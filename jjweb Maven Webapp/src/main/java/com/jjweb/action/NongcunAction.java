@@ -150,6 +150,17 @@ public class NongcunAction extends ActionSupport{
 	public String nongcun_introduction(){
 		return SUCCESS;
 	}
+	
+	
+	
+
+	@Action(value="nongcun_saveorupdate",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_saveorupdateCommit.jsp")})
+	public String nongcun_saveorupdate(){
+		nongcunDAO.saveOrUpdateOnName(nongcun);
+		return SUCCESS;
+	}
+	
 	@Action(value="nongcun_upload_commit",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_inputCommit.jsp")})
 	public String nongcun_upload_commit(){
