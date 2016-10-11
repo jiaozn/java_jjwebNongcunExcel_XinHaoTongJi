@@ -1,11 +1,17 @@
 package com.jjweb.model;
 
+import java.sql.SQLException;
 import java.util.List;
 
+
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class NongcunDAO extends HibernateDaoSupport{
@@ -146,4 +152,72 @@ public class NongcunDAO extends HibernateDaoSupport{
 			ApplicationContext ctx) {
 		return (NongcunDAO) ctx.getBean("NongcunDAO");
 	}
+	
+	
+	
+	public PageBean listpage(final int pagenum) {
+		final String hql = "from Nongcun order by id desc";
+		int num = 0; //定义整个数据库中的信息记录数
+		int allpage = 0; //定义总页数
+		final PageBean pageBean = new PageBean();
+		num = (getHibernateTemplate().find(hql)).size(); //先计算出整个数据记录信息
+		pageBean.setAllRow(num); //把记录数保存到pagebean中的allrow(总记录数)里面
+		pageBean.setPageSize(10); //设置每页显示几条信息记录
+		allpage = PageBean.countTotalPage(pageBean.getPageSize(), pageBean.getAllRow()); //根据每页显示几条和总条数计算出，要用多少页来显示
+		pageBean.setTotalPage(allpage);
+		if(allpage<pagenum) //如果用户根据地址栏强制输入第几页，那么如果大于总页数，就要把总页数赋值给当前页，否则把传递过来的页数赋值给当前页数
+		{
+		pageBean.setCurrentPage(allpage);
+		}
+		else
+		{
+		pageBean.setCurrentPage(PageBean.countCurrentPage(pagenum));
+		}
+		pageBean.setOffset(PageBean.countOffset(pageBean.getPageSize(),pageBean.getCurrentPage())); //根据每页显示的信息条数和当前页数，计算当前页开始记录号
+		 
+		if(pageBean.getTotalPage()>0)
+		{
+		//首页判断
+		//前一页判断
+		//满足条件：当当前页为第一页的时候首页和前一页不可用，否则可以使用
+		if(pageBean.getCurrentPage() == 1)
+		{
+		pageBean.setFirstPage(false);
+		pageBean.setHasPreviousPage(false);
+		}
+		else {
+		pageBean.setFirstPage(true);
+		pageBean.setHasPreviousPage(true);
+		}
+		 
+		//后一页判断
+		//尾页判断
+		if(pageBean.getTotalPage() == pageBean.getCurrentPage())
+		{
+		pageBean.setHasNextPage(false);
+		pageBean.setLastPage(false);
+		}
+		else {
+		pageBean.setHasNextPage(true);
+		pageBean.setLastPage(true);
+		}
+		 
+		}
+		 
+		//通过回调函数把Goods根据条件查询的集合放到PageBean中的List里面
+		pageBean.setList
+				(getHibernateTemplate().executeFind(new HibernateCallback()
+				{public Object doInHibernate(Session session) throws HibernateException, SQLException //捕捉异常处理：hibernate异常或者SQL异常
+					{Query query = session.createQuery(hql);
+					query.setFirstResult(pageBean.getOffset());
+					query.setMaxResults(pageBean.getPageSize());
+					List list =query.list();
+					return list;
+					}
+				}
+													)
+						);
+		return pageBean;
+		}
+	
 }

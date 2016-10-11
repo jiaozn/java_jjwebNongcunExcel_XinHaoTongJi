@@ -24,6 +24,7 @@ import org.apache.struts2.convention.annotation.Result;
 
 import com.jjweb.model.Nongcun;
 import com.jjweb.model.NongcunDAO;
+import com.jjweb.model.PageBean;
 import com.jjweb.model.User;
 import com.jjweb.util.ExcelReader;
 import com.opensymphony.xwork2.ActionSupport;
@@ -40,6 +41,10 @@ public class NongcunAction extends ActionSupport{
 	private NongcunDAO nongcunDAO;
 	private User user;
 	private File downToFile;
+	
+	private PageBean pageBean;
+	private int pagenum = 0;
+	
 	public ExcelReader getExcelReader() {
 		return excelReader;
 	}
@@ -88,6 +93,58 @@ public class NongcunAction extends ActionSupport{
 		listNongcun=nongcunDAO.findAll();
 		return SUCCESS;
 	}
+	
+	@Action(value="nongcun_showAll3",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll3.jsp")})
+	public String nongcun_showAll3(){
+		pageBean=nongcunDAO.listpage(pagenum);
+		listNongcun=pageBean.getList();
+		return SUCCESS;
+	}
+	
+	
+	public File getDownToFile() {
+		return downToFile;
+	}
+
+
+
+
+	public void setDownToFile(File downToFile) {
+		this.downToFile = downToFile;
+	}
+
+
+
+
+	public PageBean getPageBean() {
+		return pageBean;
+	}
+
+
+
+
+	public void setPageBean(PageBean pageBean) {
+		this.pageBean = pageBean;
+	}
+
+
+
+
+	public int getPagenum() {
+		return pagenum;
+	}
+
+
+
+
+	public void setPagenum(int pagenum) {
+		this.pagenum = pagenum;
+	}
+
+
+
+
 	@Action(value="nongcun_introduction",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_introduction.jsp")})
 	public String nongcun_introduction(){
