@@ -66,7 +66,7 @@ if (session.getAttribute("user")!=null){
 				</div>
 		</div>
 	</div>
-	<img src="ok.jpg">
+	<img src="img/ok.jpg">
 	<hr>
 	<p>&nbsp;&nbsp;如无法正常显示，请更换浏览器。附内网下载链接</p>
 	<ul>
