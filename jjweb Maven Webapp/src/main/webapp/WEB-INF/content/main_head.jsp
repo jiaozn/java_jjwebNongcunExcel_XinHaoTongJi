@@ -44,7 +44,7 @@ if (session.getAttribute("user")!=null){
     <div class="row"> 
         <div class="span8"> 
             <ul class="nav nav-pills"> 
-                <li class="active"><a href="nongcun_showAll">i.导入导出 </a></li> 
+                <li><a href="nongcun_showAll">i.导入导出 </a></li> 
                 <li><a href="nongcun_showAll2">ii.数据在线</a></li> 
                 <li><a href="nongcun_showAll3">ii.数据在线[通用]</a></li> 
                 <li><a href="nongcun_introduction">iii.说明</a></li> 

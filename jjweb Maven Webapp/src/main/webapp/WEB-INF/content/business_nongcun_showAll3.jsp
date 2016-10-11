@@ -86,7 +86,8 @@ if (session.getAttribute("user")!=null){
 </td>
 <td><s:property value="#n.shiwai4g"/>
 </td>
-<td><a href="#">编辑</a>&nbsp;&nbsp;<a href="#">删除</a>
+<td><a href="javascript:setvalue(this)" onclick="javascript:setvalue(this)" >编辑</a>&nbsp;&nbsp;<a href="javascript:setvalue(this)" >删除</a>
+
 </td>
 </tr>
 </s:iterator>
@@ -95,7 +96,7 @@ if (session.getAttribute("user")!=null){
 <tr></tr>
 <form action="">
 		<tr>
-			<td><input type="text" name="nongcun.id" id="nongid" style="width:100%"/> </td>
+			<td><input type="text" name="nongcun.id" id="nongid" style="width:100%" disabled="disabled"/> </td>
 			<td><input type="text" name="nongcun.dishi" id="nongdishi" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.quxian" id="nongquxian" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.xiangzhen" id="nongxiangzhen" style="width:100%" /></td>
@@ -103,7 +104,7 @@ if (session.getAttribute("user")!=null){
 			<td><input type="text" name="nongcun.xingzhengcunming" id="nongxingzhengcunming" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shinei2g" id="nongshinei2g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shiwai2g" id="nongshiwai2g" style="width:100%"/></td>
-			<td><input type="text" name="nongcun.shinei3g" id="nongshiwai3g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shinei3g" id="nongshinei3g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shiwai3g" id="nongshiwai3g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shinei4g" id="nongshinei4g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shiwai4g" id="nongshiwai4g" style="width:100%"/></td>
@@ -153,5 +154,35 @@ style="text-align: right">
 	<jsp:include page="main_foot.jsp"></jsp:include>
 
 </body>
+
+<script type="text/javascript">
+function setvalue(aaa){
+	
+	//var nongid=aaa.parentNode.parentNode.rowIndex;
+	//alert(nongid);
+	//document.getElementById("nongid").value=nongid;
+	
+	var tr=aaa.parentNode.parentNode.getElementsByTagName("td");
+		//alert(tr[1].innerHTML);
+		
+	document.getElementById("nongid").value=tr[0].innerHTML;
+	document.getElementById("nongdishi").value=tr[1].innerHTML;
+	document.getElementById("nongquxian").value=tr[2].innerHTML;
+	document.getElementById("nongxiangzhen").value=tr[3].innerHTML;
+	document.getElementById("nongxiangzhenleixing").value=tr[4].innerHTML;
+	document.getElementById("nongxingzhengcunming").value=tr[5].innerHTML;
+	document.getElementById("nongshinei2g").value=tr[6].innerHTML;
+	document.getElementById("nongshiwai2g").value=tr[7].innerHTML;
+	document.getElementById("nongshinei3g").value=tr[8].innerHTML;
+	document.getElementById("nongshiwai3g").value=tr[9].innerHTML;
+	document.getElementById("nongshinei4g").value=tr[10].innerHTML;
+	document.getElementById("nongshiwai4g").value=tr[11].innerHTML;
+	
+	
+	
+	
+	
+}
+</script>
 
 </html>
