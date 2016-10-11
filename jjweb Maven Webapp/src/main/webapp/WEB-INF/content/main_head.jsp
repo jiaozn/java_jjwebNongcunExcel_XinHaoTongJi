@@ -45,9 +45,11 @@ if (session.getAttribute("user")!=null){
         <div class="span8"> 
             <ul class="nav nav-pills"> 
                 <li><a href="nongcun_showAll">i.导入导出 </a></li> 
+                <%--
                 <li><a href="nongcun_showAll2">ii.数据在线</a></li> 
                 <li><a href="nongcun_showAll3">ii.数据在线[通用]</a></li> 
-                <li><a href="nongcun_search">ii.数据在线[通用+搜索]</a></li> 
+                --%>
+                <li><a href="nongcun_search">ii.数据在线</a></li> 
                 <li><a href="nongcun_introduction">iii.说明</a></li> 
                 <li><a href="user_logout">iv.退出</a></li> 
                 <li><a href="#">欢迎,<%=user.getName()%></a></li> 

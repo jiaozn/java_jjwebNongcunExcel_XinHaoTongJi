@@ -124,23 +124,24 @@ style="text-align: center">
 
 当前页数<s:property value="pageBean.currentPage"/>/<s:property value="pageBean.totalPage" />页&nbsp;&nbsp;共有<s:property value="pageBean.allRow"/>条&nbsp;&nbsp;&nbsp;&nbsp;每页显示<s:property value="pageBean.pageSize"/>条&nbsp;&nbsp;
 <s:if test="pageBean.firstPage">
-<a href="nongcun_search?pagenum=0" onclick="javascript:changURL(this)">[首页]</a>
+<a href="nongcun_search?pagenum=0" onclick="javascript:changeURL(this)">[首页]</a>
 </s:if>
 <s:else><span style="color:#CCC">首页</span></s:else>
 <s:if test="pageBean.hasPreviousPage">
-<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage-1' />" onclick="javascript:changURL(this)">[前一页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage-1' />" onclick="javascript:changeURL(this)">[前一页]</a>
 </s:if>
 <s:else><span style="color:#CCC">前一页</span></s:else>
 <s:if test="pageBean.hasNextPage">
-<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage+1' />" onclick="javascript:changURL(this)">[后一页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage+1' />" onclick="javascript:changeURL(this)">[后一页]</a>
 </s:if>
 <s:else><span style="color:#CCC">后一页</span></s:else>
 <s:if test="pageBean.lastPage">
-<a href="nongcun_search?pagenum=<s:property value='pageBean.totalPage' />" onclick="javascript:changURL(this)">[尾页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.totalPage' />" onclick="javascript:changeURL(this)">[尾页]</a>
 </s:if>
 <s:else><span style="color:#CCC">尾页</span></s:else>
-	<form action="nongcun_search" onclick="javascript:changAction(this)">
-	<input type="text" name="pagenum">
+	<form action="nongcun_search" onsubmit="javascript:return changeAction(this)">
+	<input type="text" name="pagenum" id="form-pagenum">
+	<input type="hidden" name="key1" id="from-key1" value="">
 	<input class="btn btn-primary" type="submit" value="跳到">
 </form>
 
@@ -192,10 +193,20 @@ function predel() {
 	} 	
 	
 	function changeURL(aa){
-		aa.href+="&key="+document.getElementById("searchText").value;
+		
+	//	alert("启动changeURL");
+		//alert("启动changeURL，原地址"+aa.href);
+		
+		aa.href+="&key1="+document.getElementById("searchText").value;
+		//alert("完成changeURL，现地址"+aa.href);
 	}
-	function changeAction(aa){
-		aa.action+="&key="+document.getElementById("searchText").value;
+	function changeAction(ac){
+		//ac.action+="&key1="+document.getElementById("searchText").value;
+		alert(document.getElementById("searchText").value);
+		//ac.action+="?key1="+document.getElementById("searchText").value+"&pagenum="+document.getElementById("form-pagenum").value;
+		document.getElementById("from-key1").value=document.getElementById("searchText").value;
+		alert(ac.action);
+		return true;
 	}
 </script>
 
