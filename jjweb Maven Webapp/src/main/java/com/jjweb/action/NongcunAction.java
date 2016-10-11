@@ -44,7 +44,21 @@ public class NongcunAction extends ActionSupport{
 	
 	private PageBean pageBean;
 	private int pagenum = 0;
-	
+	private String key1="";
+	public String getKey1() {
+		return key1;
+	}
+
+
+
+
+	public void setKey1(String key1) {
+		this.key1 = key1;
+	}
+
+
+
+
 	public ExcelReader getExcelReader() {
 		return excelReader;
 	}
@@ -87,6 +101,20 @@ public class NongcunAction extends ActionSupport{
 	public String nongcun_showAll(){
 		return SUCCESS;
 	}
+	@Action(value="nongcun_search",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll3.jsp")})
+	public String nongcun_search(){
+		if(key1.trim()=="" || key1.trim()==null){
+			pageBean=nongcunDAO.listpage(pagenum);
+			listNongcun=pageBean.getList();
+		}else{
+			System.out.println("1111key="+key1);
+			pageBean=nongcunDAO.searchByKey(pagenum,key1);
+			listNongcun=pageBean.getList();
+		}
+		//key=key+"";
+		return SUCCESS;
+	}
 	@Action(value="nongcun_showAll2",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_showAll2.jsp")})
 	public String nongcun_showAll2(){
@@ -102,6 +130,14 @@ public class NongcunAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
+	
+
+	@Action(value="nongcun_del",results={
+			@Result(name="success",location = "/WEB-INF/content/business_nongcun_deleteCommit.jsp")})
+	public String nongcun_del(){
+		nongcunDAO.delete(nongcun);
+		return SUCCESS;
+	}
 	
 	public File getDownToFile() {
 		return downToFile;

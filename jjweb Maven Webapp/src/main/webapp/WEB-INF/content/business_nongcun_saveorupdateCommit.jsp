@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<meta http-equiv="Refresh" content="0;url=nongcun_showAll3">
+<meta http-equiv="Refresh" content="0;url=nongcun_search">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">

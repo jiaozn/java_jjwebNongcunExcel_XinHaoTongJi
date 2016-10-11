@@ -31,8 +31,10 @@ if (session.getAttribute("user")!=null){
 </head>
 <body>
 
-	欢迎,<%=user.getName() %>.<a href="user_logout">退出</a>
-	
+	<form action="nongcun_search" name="form1">
+	<input id="searchText" type="text" name="key1" value="<s:property value="key1"/>" >
+	<input type="submit" value="搜索" >
+	</form>
 	<table class="table">
 	
 	<tr>
@@ -86,7 +88,8 @@ if (session.getAttribute("user")!=null){
 </td>
 <td><s:property value="#n.shiwai4g"/>
 </td>
-<td><a href="javascript:setvalue(this)" onclick="javascript:setvalue(this)" >编辑</a>&nbsp;&nbsp;<a href="javascript:setvalue(this)" >删除</a>
+<td><a href="javascript:setvalue(this)" onclick="javascript:setvalue(this)" >编辑</a>&nbsp;&nbsp;
+<a href="nongcun_del?id=<s:property value="#n.id"/>" onclick="javascript:return predel()">删除</a>
 
 </td>
 </tr>
@@ -94,7 +97,7 @@ if (session.getAttribute("user")!=null){
 
 <tr></tr>
 <tr></tr>
-<form action="nongcun_saveorupdate">
+<form action="nongcun_saveorupdate" name="form2">
 		<tr>
 			<td><input type="text" id="nongid" style="width:100%" disabled="disabled"/> </td>
 			<td><input type="text" name="nongcun.dishi" id="nongdishi" style="width:100%"/></td>
@@ -117,26 +120,26 @@ if (session.getAttribute("user")!=null){
 <table class="table">
 <tr>
 <td
-style="text-align: right">
+style="text-align: center">
 
 当前页数<s:property value="pageBean.currentPage"/>/<s:property value="pageBean.totalPage" />页&nbsp;&nbsp;共有<s:property value="pageBean.allRow"/>条&nbsp;&nbsp;&nbsp;&nbsp;每页显示<s:property value="pageBean.pageSize"/>条&nbsp;&nbsp;
 <s:if test="pageBean.firstPage">
-<a href="nongcun_showAll3?pagenum=0">[首页]</a>
+<a href="nongcun_search?pagenum=0" onclick="javascript:changURL(this)">[首页]</a>
 </s:if>
 <s:else><span style="color:#CCC">首页</span></s:else>
 <s:if test="pageBean.hasPreviousPage">
-<a href="nongcun_showAll3?pagenum=<s:property value='pageBean.currentPage-1' />">[前一页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage-1' />" onclick="javascript:changURL(this)">[前一页]</a>
 </s:if>
 <s:else><span style="color:#CCC">前一页</span></s:else>
 <s:if test="pageBean.hasNextPage">
-<a href="nongcun_showAll3?pagenum=<s:property value='pageBean.currentPage+1' />">[后一页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.currentPage+1' />" onclick="javascript:changURL(this)">[后一页]</a>
 </s:if>
 <s:else><span style="color:#CCC">后一页</span></s:else>
 <s:if test="pageBean.lastPage">
-<a href="nongcun_showAll3?pagenum=<s:property value='pageBean.totalPage' />">[尾页]</a>
+<a href="nongcun_search?pagenum=<s:property value='pageBean.totalPage' />" onclick="javascript:changURL(this)">[尾页]</a>
 </s:if>
 <s:else><span style="color:#CCC">尾页</span></s:else>
-	<form action="nongcun_showAll3">
+	<form action="nongcun_search" onclick="javascript:changAction(this)">
 	<input type="text" name="pagenum">
 	<input class="btn btn-primary" type="submit" value="跳到">
 </form>
@@ -164,7 +167,6 @@ function setvalue(aaa){
 	
 	var tr=aaa.parentNode.parentNode.getElementsByTagName("td");
 		//alert(tr[1].innerHTML);
-		
 	document.getElementById("nongid").value=tr[0].innerHTML;
 	document.getElementById("nongdishi").value=tr[1].innerHTML;
 	document.getElementById("nongquxian").value=tr[2].innerHTML;
@@ -177,12 +179,24 @@ function setvalue(aaa){
 	document.getElementById("nongshiwai3g").value=tr[9].innerHTML;
 	document.getElementById("nongshinei4g").value=tr[10].innerHTML;
 	document.getElementById("nongshiwai4g").value=tr[11].innerHTML;
-	
-	
-	
-	
-	
 }
+
+
+function predel() { 
+	var msg = "确定删除？\n\n请确认！"; 
+	if (confirm(msg)==true){ 
+	return true; 
+	}else{ 
+	return false; 
+	} 
+	} 	
+	
+	function changeURL(aa){
+		aa.href+="&key="+document.getElementById("searchText").value;
+	}
+	function changeAction(aa){
+		aa.action+="&key="+document.getElementById("searchText").value;
+	}
 </script>
 
 </html>
