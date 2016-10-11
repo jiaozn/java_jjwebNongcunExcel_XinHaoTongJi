@@ -71,7 +71,6 @@ if (session.getAttribute("user")!=null){
 	<p>&nbsp;&nbsp;如无法正常显示，请更换浏览器。附内网下载链接</p>
 	<ul>
 		<li><a href="download/Firefox.exe">FireFox浏览器</a></li>
-		<li><a href="download/QQBrowser.exe">QQ浏览器</a></li>
 	</ul><br>
 	<jsp:include page="main_foot.jsp"></jsp:include>
 
