@@ -144,23 +144,23 @@ public class ExcelReader {
      */
     private String getStringCellValue(HSSFCell cell) {
         String strCell = "";
-//        switch (cell.getCellType()) {
-//        case HSSFCell.CELL_TYPE_STRING:
+        switch (cell.getCellType()) {
+        case HSSFCell.CELL_TYPE_STRING:
             strCell = cell.getStringCellValue();
-//            break;
-//        case HSSFCell.CELL_TYPE_NUMERIC:
-//            strCell = String.valueOf(cell.getNumericCellValue());
-//            break;
-//        case HSSFCell.CELL_TYPE_BOOLEAN:
-//            strCell = String.valueOf(cell.getBooleanCellValue());
-//            break;
-//        case HSSFCell.CELL_TYPE_BLANK:
-//            strCell = "";
-//            break;
-//        default:
-//            strCell = "";
-//            break;
-//        }
+            break;
+        case HSSFCell.CELL_TYPE_NUMERIC:
+            strCell = String.valueOf(cell.getNumericCellValue());
+            break;
+        case HSSFCell.CELL_TYPE_BOOLEAN:
+            strCell = String.valueOf(cell.getBooleanCellValue());
+            break;
+        case HSSFCell.CELL_TYPE_BLANK:
+            strCell = "";
+            break;
+        default:
+            strCell = "";
+            break;
+        }
         if (strCell.equals("") || strCell == null) {
             return "";
         }
