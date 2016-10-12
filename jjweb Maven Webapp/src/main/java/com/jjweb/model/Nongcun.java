@@ -25,6 +25,22 @@ public class Nongcun {
 	private String xiangzhen;
 	private String xiangzhenleixing;
 	private String xingzhengcunming;
+	private String shifouguihua;
+	private String guihuazhanming;
+	@Column(name = "shifouguihua", nullable = true, length = 255)
+	public String getShifouguihua() {
+		return shifouguihua;
+	}
+	public void setShifouguihua(String shifouguihua) {
+		this.shifouguihua = shifouguihua;
+	}
+	@Column(name = "guihuazhanming", nullable = true, length = 255)
+	public String getGuihuazhanming() {
+		return guihuazhanming;
+	}
+	public void setGuihuazhanming(String guihuazhanming) {
+		this.guihuazhanming = guihuazhanming;
+	}
 	@Column(name = "beizhu", nullable = true, length = 255)
 	public String getBeizhu() {
 		return beizhu;

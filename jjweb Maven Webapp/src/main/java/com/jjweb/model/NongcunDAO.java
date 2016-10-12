@@ -226,8 +226,8 @@ public class NongcunDAO extends HibernateDaoSupport{
 	public List searchByKey2(String key){
 		List<Nongcun> listNongcun;
 		if (key=="" ){
-			String queryString = "from Nongcun n where n.dishi LIKE ? or n.quxian LIKE ? or n.xiangzhen LIKE ? or n.xiangzhenleixing LIKE ? or n.xingzhengcunming LIKE ? or n.shinei2g LIKE ? or n.shiwai2g LIKE ? or n.shinei3g LIKE ? or n.shiwai3g LIKE ? or n.shinei4g LIKE ? or n.shiwai4g LIKE ?";
-			listNongcun=getHibernateTemplate().find(queryString, new Object[]{key,key,key,key,key,key,key,key,key,key,key},new Type[]{Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING});
+			String queryString = "from Nongcun n where n.dishi LIKE ? or n.quxian LIKE ? or n.xiangzhen LIKE ? or n.xiangzhenleixing LIKE ? or n.xingzhengcunming LIKE ? or n.shinei2g LIKE ? or n.shiwai2g LIKE ? or n.shinei3g LIKE ? or n.shiwai3g LIKE ? or n.shinei4g LIKE ? or n.shiwai4g LIKE ? or n.shifouguihua LIKE ? or n.guihuazhanming LIKE ?";
+			listNongcun=getHibernateTemplate().find(queryString, new Object[]{key,key,key,key,key,key,key,key,key,key,key,key,key},new Type[]{Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING,Hibernate.STRING});
 		}else{
 			listNongcun=this.findAll();
 		}
@@ -242,7 +242,7 @@ public class NongcunDAO extends HibernateDaoSupport{
 		if (key.trim()=="" || key==null){
 		hql = "from Nongcun order by id desc";
 		}else{
-		hql = "from Nongcun n where n.dishi like '%"+key+"%' or n.quxian like '%"+key+"%' or n.xiangzhen like '%"+key+"%' or n.xiangzhenleixing like '%"+key+"%' or n.xingzhengcunming like '%"+key+"%' or n.shinei2g like '%"+key+"%' or n.shiwai2g like '%"+key+"%' or n.shinei3g like '%"+key+"%' or n.shiwai3g like '%"+key+"%' or n.shinei4g like '%"+key+"%' or n.shiwai4g like '%"+key+"%' order by id DESC";
+		hql = "from Nongcun n where n.dishi like '%"+key+"%' or n.quxian like '%"+key+"%' or n.xiangzhen like '%"+key+"%' or n.xiangzhenleixing like '%"+key+"%' or n.xingzhengcunming like '%"+key+"%' or n.shinei2g like '%"+key+"%' or n.shiwai2g like '%"+key+"%' or n.shinei3g like '%"+key+"%' or n.shiwai3g like '%"+key+"%' or n.shinei4g like '%"+key+"%' or n.shiwai4g like '%"+key+"%' or n.shifouguihua like '%"+key+"%' or n.guihuazhanming like '%"+key+"%' order by id DESC";
 		System.out.println(hql);
 		}
 		int num = 0; //定义整个数据库中的信息记录数

@@ -332,6 +332,12 @@ public class NongcunAction extends ActionSupport{
         cell = row.createCell((short) 14);  
         cell.setCellValue("备注");  
         cell.setCellStyle(style);  
+        cell = row.createCell((short) 15);  
+        cell.setCellValue("是否规划");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 16);  
+        cell.setCellValue("规划站名");  
+        cell.setCellStyle(style);  
   
         // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
         List list = listNongcun;  
@@ -361,7 +367,9 @@ public class NongcunAction extends ActionSupport{
 //            }else{
 //            cell.setCellValue(new SimpleDateFormat("yyyy年MM月dd日 hh时mm分ss秒SSS-").format(nongcun.getTime()));  
 //            }
-            row.createCell((short) 14).setCellValue((String) nongcunTemp.getBeizhu());  
+            row.createCell((short) 14).setCellValue((String) nongcunTemp.getBeizhu()); 
+            row.createCell((short) 15).setCellValue((String) nongcunTemp.getShifouguihua());
+            row.createCell((short) 16).setCellValue((String) nongcunTemp.getGuihuazhanming());
         }  
         // 第六步，将文件存到指定位置  
         try  

@@ -126,6 +126,8 @@ public class ExcelReader {
             	nongcun.setShiwai3g(getStringCellValue(row.getCell(9)));
             	nongcun.setShinei4g(getStringCellValue(row.getCell(10)));
             	nongcun.setShiwai4g(getStringCellValue(row.getCell(11)));
+            	nongcun.setShifouguihua(getStringCellValue(row.getCell(12)));
+            	nongcun.setGuihuazhanming(getStringCellValue(row.getCell(13)));
             	nongcun.setTime(new Timestamp(new Date().getTime()));
             	listNongcun.add(nongcun);
         }

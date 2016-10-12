@@ -50,6 +50,8 @@ if (session.getAttribute("user")!=null){
 			<td>3G室外</td>
 			<td>4G室内</td>
 			<td>4G室外</td>
+			<td>是否规划</td>
+			<td>规划站名</td>
 			<td>操作</td>
 		</tr>	
 	
@@ -88,6 +90,10 @@ if (session.getAttribute("user")!=null){
 </td>
 <td><s:property value="#n.shiwai4g"/>
 </td>
+<td><s:property value="#n.shifouguihua"/>
+</td>
+<td><s:property value="#n.guihuazhanming"/>
+</td>
 <td><a href="javascript:setvalue(this)" onclick="javascript:setvalue(this)" >编辑</a>&nbsp;&nbsp;
 <a href="nongcun_del?nongcun.id=<s:property value="#n.id"/>" onclick="javascript:return predel()">删除</a>
 
@@ -111,6 +117,8 @@ if (session.getAttribute("user")!=null){
 			<td><input type="text" name="nongcun.shiwai3g" id="nongshiwai3g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shinei4g" id="nongshinei4g" style="width:100%"/></td>
 			<td><input type="text" name="nongcun.shiwai4g" id="nongshiwai4g" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.shifouguihua" id="nongshifouguihua" style="width:100%"/></td>
+			<td><input type="text" name="nongcun.guihuazhanming" id="nongguihuazhanming" style="width:100%"/></td>
 			<td><input type="submit" value="更新/新增" id="nongdishi" style="width:100%"/></td>
 		</tr>
 </form>
@@ -180,6 +188,8 @@ function setvalue(aaa){
 	document.getElementById("nongshiwai3g").value=tr[9].innerHTML;
 	document.getElementById("nongshinei4g").value=tr[10].innerHTML;
 	document.getElementById("nongshiwai4g").value=tr[11].innerHTML;
+	document.getElementById("nongshifouguihua").value=tr[12].innerHTML;
+	document.getElementById("nongguihuazhanming").value=tr[13].innerHTML;
 }
 
 
