@@ -203,10 +203,10 @@ function predel() {
 	}
 	function changeAction(ac){
 		//ac.action+="&key1="+document.getElementById("searchText").value;
-		alert(document.getElementById("searchText").value);
+		//alert(document.getElementById("searchText").value);
 		//ac.action+="?key1="+document.getElementById("searchText").value+"&pagenum="+document.getElementById("form-pagenum").value;
 		document.getElementById("from-key1").value=document.getElementById("searchText").value;
-		alert(ac.action);
+		//alert(ac.action);
 		return true;
 	}
 </script>
