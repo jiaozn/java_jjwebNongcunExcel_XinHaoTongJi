@@ -194,6 +194,7 @@ public class NongcunAction extends ActionSupport{
 	@Action(value="nongcun_saveorupdate",results={
 			@Result(name="success",location = "/WEB-INF/content/business_nongcun_saveorupdateCommit.jsp")})
 	public String nongcun_saveorupdate(){
+		System.out.println(nongcun.getShinei2g());
 		nongcunDAO.saveOrUpdateOnName(nongcun);
 		return SUCCESS;
 	}
